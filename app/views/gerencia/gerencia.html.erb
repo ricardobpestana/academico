@@ -1,0 +1,35 @@
+<h2><%= @cursos.nome %></h2>
+<h4><%= @periodo %>º Periodo</h4>
+
+<table class="table table-bordered">  
+  <thead>  
+    <tr>
+      <th>Hora</th>    
+      <% @dias.each do |dia| %>  
+        <td><%= dia.dia %></td>  
+      <% end %>
+    </tr>  
+  </thead>  
+  <tbody>
+    <% @horas.each do |hora| %>  
+      <tr>  
+        <td><%= hora.hora %></td>
+        <% @dias.each do |dia| %> 
+          <%= form_tag('/gerencia/criar_horario', method: :post) do %>
+            <%= hidden_field_tag 'dia', dia.id %>
+            <%= hidden_field_tag 'hora', hora.id %>
+            <%= hidden_field_tag 'periodo', @periodo %>
+            <td>
+              <div>
+                <%= select_tag 'action_data', options_for_select(@disciplinas.collect{|objeto| [objeto.sigla, objeto.id]}), :onchange => remote_function(:url => {:action => 'add_object_action', :dia => dia, :hora => hora}, :with => "'option='+ this.value") %>
+                <br>
+                <span id="object_action"></span>
+                <%= submit_tag "Cadastrar" %>
+              </div>
+            </td>
+          <% end %>   
+        <% end %>  
+      </tr>  
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<h2>Professor</h2>
+
+<p>
+	<b>Matricula: </b>
+	<%= @professor.matricula %>
+</p>
+
+<p>
+	<b>Nome: </b>
+	<%= @professor.nome %>
+</p>
+
+<p>
+	<b>E-mail: </b>
+	<%= @professor.email %>
+</p>
+
+<p>
+	<b>Carga Horária Semanal: </b>
+	<%= @professor.ch_semanal %>
+</p>
+
+<p>
+	<b>Data de Admissão: </b>
+	<%= @professor.data_adm %>
+</p>
+
+<br><br>
+<%= link_to 'Editar', action: 'edit', id: @professor %>
+<%= link_to 'Voltar', action: 'index' %>

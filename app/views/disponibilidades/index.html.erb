@@ -1,0 +1,24 @@
+<h2>Disponibilidades dos Professores</h2>
+
+<table>
+
+	<tr>
+		<th>Professor</th>
+		<th>Dia</th>
+		<th>Hora</th>
+	</tr>
+
+	<% @disponibilidades.each do |disponibilidade| %>
+		<tr>
+			<td><%= disponibilidade.professor.nome %> </td>
+			<td><%= disponibilidade.dia.dia %> </td>
+			<td><%= disponibilidade.hora.hora %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: disponibilidade %></td>
+			<td><%= link_to 'Excluir', disponibilidade, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

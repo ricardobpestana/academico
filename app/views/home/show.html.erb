@@ -1,0 +1,34 @@
+<h2><%= @cursos.nome %></h2>
+
+<table class="table table-striped table-hover">  
+  <thead>  
+    <tr>
+      <th>Hora</th>    
+      <% @dias.each do |dia| %>  
+        <td><%= dia.dia %></td>  
+      <% end %>
+    </tr>  
+  </thead>  
+  <tbody>
+    <% @horas.each do |hora| %>  
+      <tr class="active">  
+        <td><%= hora.hora %></td>
+        <% @dias.each do |dia| %>  
+          <td>
+          <% unless Horario.where(dia_id: dia.id).where(hora_id: hora.id).empty? %>
+            <%= Horario.where(dia_id: dia.id).where(hora_id: hora.id).first.disciplina.sigla %>
+          <% else %>
+            ----
+          <% end%>
+          <br>
+          <% unless Horario.where(dia_id: dia.id).where(hora_id: hora.id).empty? %>
+            <%= Horario.where(dia_id: dia.id).where(hora_id: hora.id).first.professor.nome %>
+          <% else %>
+            ----
+          <% end%>
+          </td>   
+        <% end %>  
+      </tr>  
+    <% end %>
+  </tbody>
+</table>

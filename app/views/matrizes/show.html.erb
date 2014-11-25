@@ -1,0 +1,26 @@
+<h2>Matriz Curricular</h2>
+
+<p>
+	<b>Curso: </b>
+	<%= @matriz.curso.nome %>
+</p>
+
+<p>
+	<b>Disciplina: </b>
+	<%= @matriz.disciplina.nome %>
+</p>
+
+<p>
+	<b>Período: </b>
+	<%= @matriz.periodo %>
+</p>
+
+<p>
+	<b>Quantidade de Aulas Semanais: </b>
+	<%= @matriz.qtd_aulas_semana %>
+</p>
+
+<br><br>
+<%= link_to 'Editar', action: 'edit', id: @matriz %>
+<%= link_to 'Voltar', action: 'index' %>
+

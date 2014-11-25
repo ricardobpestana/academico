@@ -1,0 +1,28 @@
+<html>
+
+	<head>
+	</head>
+
+	<body>
+		<h2>Menu</h2>
+		<a href="/cursos/">Cursos</a>
+		<br>
+		<a href="/dias/">Dias</a>
+		<br>
+		<a href="/disciplinas/">Disciplinas</a>
+		<br>
+		<a href="/disponibilidades/">Disponibilidades</a>
+		<br>
+		<a href="/horas/">Horas</a>
+		<br>
+		<a href="/matrizes/">Matriz Curricular</a>
+		<br>
+		<a href="/preferencias/">Preferência dos Professores</a>
+		<br>
+		<a href="/professores/">Professores</a>
+		<br>
+		<a href="/turmas/">Turmas</a>
+		<br>
+	</body>
+
+</html>

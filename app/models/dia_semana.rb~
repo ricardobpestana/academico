@@ -1,0 +1,10 @@
+class DiaSemana < ActiveRecord::Base
+
+  attr_accessible :dia
+
+	validates_presence_of :dia, message: " - deve ser preenchido!"
+
+	has_many :disponibilidade
+	has_many :horarios
+
+end

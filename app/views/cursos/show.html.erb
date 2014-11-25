@@ -1,0 +1,26 @@
+<h2>Curso</h2>
+
+<p>
+	<b>Tipo: </b>
+	<%= @curso.tipo %>
+</p>
+
+<p>
+	<b>Nome: </b>
+	<%= @curso.nome %>
+</p>
+
+<p>
+	<b>Número de Períodos: </b>
+	<%= @curso.qtd_periodos %>
+</p>
+
+<p>
+	<b>Carga Horária Total: </b>
+	<%= @curso.ch_total %>
+</p>
+
+
+<br><br>
+<%= link_to 'Editar', action: 'edit', id: @curso %>
+<%= link_to 'Voltar', action: 'index' %>

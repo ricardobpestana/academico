@@ -1,0 +1,26 @@
+<h2>Turma</h2>
+
+<p>
+	<b>Curso: </b>
+	<%= @turma.curso.nome %>
+</p>
+
+<p>
+	<b>Período: </b>
+	<%= @turma.periodo %>
+</p>
+
+<p>
+	<b>Turno: </b>
+	<%= @turma.turno %>
+</p>
+
+<p>
+	<b>Quantidade de Alunos: </b>
+	<%= @turma.qtd_alunos %>
+</p>
+
+<br><br>
+<%= link_to 'Editar', action: 'edit', id: @turma %>
+<%= link_to 'Voltar', action: 'index' %>
+

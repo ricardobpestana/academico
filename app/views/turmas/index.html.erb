@@ -1,0 +1,27 @@
+<h2>Turmas</h2>
+
+<table>
+
+	<tr>
+		<th>Curso</th>
+		<th>Período</th>
+		<th>Turno</th>
+		<th>Quantidade de Alunos</th>
+	</tr>
+
+	<% @turmas.each do |turma| %>
+		<tr>
+			<td><%= turma.curso.nome %> </td>
+			<td><%= turma.periodo %> </td>
+			<td><%= turma.turno %> </td>
+			<td><%= turma.qtd_alunos %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: turma %></td>
+			<td><%= link_to 'Excluir', turma, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+			<td><%= link_to 'Atualizar', action: 'edit', id: turma %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

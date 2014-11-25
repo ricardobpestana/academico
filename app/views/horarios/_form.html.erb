@@ -1,0 +1,57 @@
+<ul>
+	<% @horario.errors.full_messages.each do |msg| %>
+		<li><%= msg %> </li>
+	<% end %>
+</ul>
+
+<br>
+
+<%= form_for @horario do |f| %>
+
+  <div class="field">
+    <% if @horario.dia %>
+			<%= f.hidden_field 'dia_id' %>
+		<% else %>
+			<%= f.label :dia_id %> <br>
+			<%= f.collection_select(:dia_id, Dia.order('id'), :id, :dia, {:prompt => true}) %>
+		<% end %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <% if @horario.hora %>
+			<%= f.hidden_field 'hora_id' %>
+		<% else %>
+			<%= f.label :hora_id %> <br>
+			<%= f.collection_select(:hora_id, Hora.order('hora'), :id, :hora, {:prompt => true}) %>
+		<% end %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <% if @horario.disciplina %>
+			<%= f.hidden_field 'disciplina_id' %>
+		<% else %>
+			<%= f.label :disciplina_id %> <br>
+			<%= f.collection_select(:disciplina_id, Disciplina.order('nome'), :id, :nome, {:prompt => true}) %>
+		<% end %>
+  </div>	
+
+  <br>
+
+  <div class="field">
+    <% if @horario.professor %>
+			<%= f.hidden_field 'professor' %>
+		<% else %>
+			<%= f.label :professor_id %> <br>
+			<%= f.collection_select(:professor_id, Professor.order('nome'), :id, :nome, {:prompt => true}) %>
+		<% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+
+<% end %>

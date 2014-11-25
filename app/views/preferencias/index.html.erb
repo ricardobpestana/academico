@@ -1,0 +1,27 @@
+<h2>Preferência dos Professores</h2>
+
+<table>
+
+	<tr>
+		<th>Professor</th>
+		<th>Disciplina</th>
+		<th>Ano</th>
+		<th>Semestre</th>
+	</tr>
+
+	<% @preferencias.each do |preferencia| %>
+		<tr>
+			<td><%= preferencia.professor.nome %> </td>
+			<td><%= preferencia.disciplina.nome %> </td>
+			<td><%= preferencia.ano %> </td>
+			<td><%= preferencia.semestre %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: preferencia %></td>
+			<td><%= link_to 'Excluir', preferencia, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+			<td><%= link_to 'Atualizar', action: 'edit', id: preferencia %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

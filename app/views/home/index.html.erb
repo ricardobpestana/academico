@@ -1,0 +1,16 @@
+<%= form_tag('/home/gradehorario') do -%>
+	<table>
+		<tr>
+			<th>Curso</th>
+			<th>Período</th>
+			<th>Turno</th>
+		</tr>
+		<tr>
+			<th> <%= select_tag "curso", options_from_collection_for_select(@cursos, "id", "nome") %> </th>
+			<th> <%= select_tag "periodo", @periodos.html_safe %> </th>
+			<th> <%= select_tag "turno", @turnos.html_safe %> </th>
+		</tr>
+	</table>
+	<br>
+  <div><%= submit_tag "Exibir Horário" %></div>
+<% end -%>

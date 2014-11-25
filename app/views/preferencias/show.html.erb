@@ -1,0 +1,26 @@
+<h2>Preferência dos Professores</h2>
+
+<p>
+	<b>Professor: </b>
+	<%= @preferencia.professor.nome %>
+</p>
+
+<p>
+	<b>Disciplina: </b>
+	<%= @preferencia.disciplina.nome %>
+</p>
+
+<p>
+	<b>Ano: </b>
+	<%= @preferencia.ano %>
+</p>
+
+<p>
+	<b>Semestre: </b>
+	<%= @preferencia.semestre %>
+</p>
+
+<br><br>
+<%= link_to 'Editar', action: 'edit', id: @preferencia %>
+<%= link_to 'Voltar', action: 'index' %>
+

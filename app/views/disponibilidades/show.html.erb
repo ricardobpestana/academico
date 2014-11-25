@@ -1,0 +1,19 @@
+<h2>Disponibilidades dos Professores</h2>
+
+<p>
+	<b>Professor: </b>
+	<%= @disponibilidade.professor.nome %>
+</p>
+
+<p>
+	<b>Dia: </b>
+	<%= @disponibilidade.dia.dia %>
+</p>
+
+<p>
+	<b>Hora: </b>
+	<%= @disponibilidade.hora.hora %>
+</p>
+
+<br><br>
+<%= link_to 'Voltar', action: 'index' %>

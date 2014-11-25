@@ -1,0 +1,16 @@
+<h2>Disciplina</h2>
+
+<p>
+	<b>Nome: </b>
+	<%= @disciplina.nome %>
+</p>
+
+<p>
+	<b>Sigla: </b>
+	<%= @disciplina.sigla %>
+</p>
+
+<br><br>
+<%= link_to 'Editar', action: 'edit', id: @disciplina %>
+<%= link_to 'Voltar', action: 'index' %>
+

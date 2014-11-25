@@ -1,0 +1,29 @@
+<h2>Professores</h2>
+
+<table>
+
+	<tr>
+		<th>Matrícula</th>
+		<th>Nome</th>
+		<th>E-mail</th>
+		<th>Carga Horária Semanal</th>
+		<th>Data de Admissão</th>
+	</tr>
+
+	<% @professores.each do |professor| %>
+		<tr>
+			<td><%= professor.matricula %> </td>
+			<td><%= professor.nome %> </td>
+			<td><%= professor.email %> </td>
+			<td><%= professor.ch_semanal %> </td>
+			<td><%= professor.data_adm %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: professor %></td>
+			<td><%= link_to 'Excluir', professor, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+			<td><%= link_to 'Atualizar', action: 'edit', id: professor %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

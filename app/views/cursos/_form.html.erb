@@ -1,0 +1,15 @@
+<ul>
+	<% @curso.errors.full_messages.each do |msg| %>
+		<li><%= msg %> </li>
+	<% end %>
+</ul>
+
+<br>
+
+<%= form_for @curso do |f| %>
+	Tipo: <%= f.text_field :tipo %> <br/>
+	Nome: <%= f.text_field :nome %> <br/>
+	Número de Períodos: <%= f.text_field :qtd_periodos %> <br/>
+	Carga Horária Total: <%= f.text_field :ch_total %> <br/>
+	<%= f.submit "Salvar" %>
+<% end %>

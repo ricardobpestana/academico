@@ -1,0 +1,27 @@
+<h2>Cursos</h2>
+
+<table>
+
+	<tr>
+		<th>Tipo</th>
+		<th>Nome</th>
+		<th>Número de Períodos</th>
+		<th>Carga Horária Total</th>
+	</tr>
+
+	<% @cursos.each do |curso| %>
+		<tr>
+			<td><%= curso.tipo %> </td>
+			<td><%= curso.nome %> </td>
+			<td><%= curso.qtd_periodos %> </td>
+			<td><%= curso.ch_total %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: curso %></td>
+			<td><%= link_to 'Excluir', curso, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+			<td><%= link_to 'Atualizar', action: 'edit', id: curso %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

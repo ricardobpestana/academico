@@ -1,0 +1,8 @@
+class CreateDiasSemana < ActiveRecord::Migration
+  def change
+    create_table :dias_semana do |t|
+
+      t.timestamps
+    end
+  end
+end

@@ -1,0 +1,21 @@
+<h2>Horários</h2>
+
+<table>
+
+	<tr>
+		<th>Hora</th>
+	</tr>
+
+	<% @horas.each do |hora| %>
+		<tr>
+			<td><%= hora.hora %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: hora %></td>
+			<td><%= link_to 'Excluir', hora, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+			<td><%= link_to 'Atualizar', action: 'edit', id: hora %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

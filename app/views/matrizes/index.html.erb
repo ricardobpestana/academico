@@ -1,0 +1,27 @@
+<h2>Matrizes Curriculares</h2>
+
+<table>
+
+	<tr>
+		<th>Curso</th>
+		<th>Disciplina</th>
+		<th>Período</th>
+		<th>Quantidade de Aulas Semanais</th>
+	</tr>
+
+	<% @matrizes.each do |matriz| %>
+		<tr>
+			<td><%= matriz.curso.nome %> </td>
+			<td><%= matriz.disciplina.nome %> </td>
+			<td><%= matriz.periodo %> </td>
+			<td><%= matriz.qtd_aulas_semana %> </td>
+			<td><%= link_to 'Exibir', action: 'show', id: matriz %></td>
+			<td><%= link_to 'Excluir', matriz, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+			<td><%= link_to 'Atualizar', action: 'edit', id: matriz %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+<br><br>
+<%= link_to 'Novo', action: 'new' %>

@@ -1,0 +1,8 @@
+class CreateMatrizes < ActiveRecord::Migration
+  def change
+    create_table :matrizes do |t|
+
+      t.timestamps
+    end
+  end
+end

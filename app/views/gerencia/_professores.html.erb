@@ -1,0 +1,1 @@
+<%= select_tag "professor", options_from_collection_for_select(Disponibilidade.professores_disponiveis(dia, hora, disciplina_id), "id", "nome") %>

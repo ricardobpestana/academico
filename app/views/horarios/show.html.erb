@@ -1,0 +1,28 @@
+<h2>Horário</h2>
+
+<p>
+	<b>Dia: </b>
+	<%= @horario.dia.dia %>
+</p>
+
+<p>
+	<b>Hora: </b>
+	<%= @horario.hora.hora %>
+</p>
+
+
+<p>
+	<b>Disciplina: </b>
+	<%= @horario.disciplina.nome %>
+</p>
+
+<p>
+	<b>Professor: </b>
+	<%= @horario.professor.nome %>
+</p>
+
+<br><br>
+
+<%= link_to 'Editar', action: 'edit', id: @horario %>
+<%= link_to 'Voltar', action: 'index' %>
+
